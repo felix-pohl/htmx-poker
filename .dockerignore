@@ -1,0 +1,12 @@
+Dockerfile
+.dockerignore
+**/node_modules
+backend/node_modules
+pakasnacka/node_modules
+node_modules
+**/.git
+.git
+**/.angular
+**/.vscode
+**/dist
+**/fe
