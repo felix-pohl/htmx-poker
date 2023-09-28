@@ -1,11 +1,26 @@
 import crypto from 'node:crypto';
 
+export function randomName() {
+    return `${pickAny(adjective)}-${pickAny(animals)}-${pickAny(thing)}`
+}
+
+function pickAny<T>(animals: Array<T>) {
+    return animals[crypto.randomInt(0, animals.length)];
+}
+
 const animals = [
     'wombat',
     'alpaca',
     'pliep',
     'roo',
-    'kidna'
+    'kidna',
+    'gecko',
+    'ant',
+    'guppy',
+    'husky',
+    'tiger',
+    'mole',
+    'wolf'
 ]
 
 const adjective = [
@@ -16,7 +31,11 @@ const adjective = [
     'escaped',
     'happy',
     'sad',
-    'ticklish'
+    'ticklish',
+    'funny',
+    'slim',
+    'fast',
+    'bright',
 ]
 
 const thing = [
@@ -24,12 +43,9 @@ const thing = [
     'coop',
     'label',
     'box',
-    'thing'
+    'thing',
+    'paper',
+    'drum',
+    'nest',
+    'cage',
 ]
-
-export function randomName() {
-    const rndAnimal = animals[crypto.randomInt(0, animals.length)];
-    const rndAdjective = adjective[crypto.randomInt(0, adjective.length)];
-    const rndThing = thing[crypto.randomInt(0, thing.length)];
-    return `${rndAdjective}-${rndAnimal}-${rndThing}`
-}
